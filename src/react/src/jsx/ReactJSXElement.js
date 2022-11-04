@@ -1,3 +1,6 @@
+import hasOwnProperty from 'shared/hasOwnProperty'
+import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols'
+
 const RESERVED_PROPS = {
   key: true,
   ref: true,
@@ -11,6 +14,16 @@ function hasValidKey() {
 
 function hasValidRef() {
   return config.ref !== undefined;
+}
+
+function ReactElement(type, key, ref, props) {
+  return {
+    $$typeof: REACT_ELEMENT_TYPE,
+    type,
+    key,
+    ref,
+    props
+  }
 }
 
 export function jsxDev(type, config) {
@@ -29,7 +42,7 @@ export function jsxDev(type, config) {
   }
 
   for (propName in config) {
-    if (Object.hasOwnProperty.call(config, propName) && !RESERVED_PROPS[propName]) {
+    if (hasOwnProperty.call(config, propName) && !RESERVED_PROPS[propName]) {
       props[propName] = config[propName]
     }
   }
