@@ -8,11 +8,11 @@ const RESERVED_PROPS = {
   __source: true
 }
 
-function hasValidKey() {
+function hasValidKey(config) {
   return config.key !== undefined;
 }
 
-function hasValidRef() {
+function hasValidRef(config) {
   return config.ref !== undefined;
 }
 
@@ -26,7 +26,7 @@ function ReactElement(type, key, ref, props) {
   }
 }
 
-export function jsxDev(type, config) {
+export function jsxDEV(type, config) {
   let propName // 属性名
   const props = {} // 属性对象
   
