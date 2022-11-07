@@ -1,4 +1,4 @@
-import { createFiberRoot } from "./createFiberRoot";
+import { createFiberRoot } from "./ReactFiberRoot";
 
 export function createContainer(containerInfo) {
   return createFiberRoot(containerInfo);

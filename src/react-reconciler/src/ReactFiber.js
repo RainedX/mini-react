@@ -1,5 +1,5 @@
 import { HostRoot } from './ReactWorkTags.js';
-
+import { NoFlags } from './ReactFiberFlags.js';
 
 function FiberNode(tag, pendingProps, key) {
   // Instance
@@ -33,4 +33,5 @@ const createFiber = function(tag, pendingProps, key) {
 }
 
 export function createHostRootFiber() {
-  return createFiber(HostRoot, null, null)
+  return createFiber(HostRoot, null, null);
+}
